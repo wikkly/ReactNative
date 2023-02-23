@@ -1,44 +1,37 @@
+import React, { useState } from 'react';
+import { FlatList, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import {FlatList, StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
+import Todolist from './Component/handleGoals';
+import Modalou from './Component/Modal';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 22,
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-    color: 'red',
-    fontWeight: 'bold'
-    
-  },
-});
-
-const SampleGoals = () => {
+export default function App() {
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    title:{
+      fontSize: 70,
+      alignItems: 'center',
+      paddingTop: 2,
+      color: '#930050',
+      fontWeight: 'bold', 
+    },
+    image:{
+      flex: 1,
+      justifyContent: 'center',
+    },
+  });
+//TextInput = est stocké dans l'état NewGoal
   return (
     <View style={styles.container}>
-      <FlatList 
-      data={[
-        {key : 'Faire les courses'},
-        {key : 'Aller à la salle de sport 3 fois par semaine'},
-        {key : 'Monter à plus de 5000m d altitude'},
-        {key : 'Acheter mon premier appartement'},
-        {key : 'Perdre 5 kgs'},
-        {key : 'Gagner en productivité'},
-        {key : 'Apprendre un nouveau langage'},
-        {key : 'Faire une mission en freelance'},
-        {key : 'Organiser un meetup autour de la tech'},
-        {key : 'Faire un triathlon'},
-      ]}
-      renderItem={({item}) => <Text style={styles.item}>
-      {item.key}</Text>}
-      />
+      <ImageBackground source={require("../Todolist/assets/backgroundimage.jpeg")} resizeMode="cover" style={styles.image}>
+      <View style={styles.title}>
+        <Text style={styles.title}> TO DO LIST </Text>
+      </View>
+      <StatusBar style="auto" />
+      <Modalou></Modalou>
+      <Todolist></Todolist>
+        </ImageBackground>
     </View>
   );
 }
-
-export default SampleGoals;
-
