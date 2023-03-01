@@ -8,11 +8,13 @@ export default function App() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      height: '100%'
     },
     title:{
       fontSize: 70,
       alignItems: 'center',
       paddingTop: 2,
+      marginTop: 70,
       color: '#930050',
       fontWeight: 'bold', 
     },
