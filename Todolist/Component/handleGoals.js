@@ -78,6 +78,10 @@ const styles = StyleSheet.create({
     },
     modalCancelButton: {
       marginRight: 10,
+      backgroundColor: '#930050',
+      paddingVertical: 10,
+      paddingHorizontal: 20,
+      borderRadius: 5,
       },
       modalConfirmButton: {
       backgroundColor: '#930050',
@@ -86,7 +90,8 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       },
       modalCancelButtonText: {
-      color: '#333',
+      color: '#fff',
+      fontWeight: 'bold',
       },
       modalConfirmButtonText: {
       color: '#fff',
